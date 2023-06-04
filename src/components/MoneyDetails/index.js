@@ -2,9 +2,9 @@ import './index.css'
 
 const MoneyDetails = props => {
   const {expenses, income} = props
-  const incomeValue = income > 0 ? `Rs ${income}` : 0
-  const expensesValue = expenses > 0 ? `Rs ${expenses}` : 0
-  const balanceValue = income - expenses > 0 ? `Rs ${income - expenses}` : 0
+  const incomeValue = income > 0 ? income : 0
+  const expensesValue = expenses > 0 ? expenses : 0
+  const balanceValue = income - expenses > 0 ? income - expenses : 0
 
   return (
     <div className="money-details-container">
@@ -17,7 +17,7 @@ const MoneyDetails = props => {
         <div className="money-card-details">
           <p className="money-card-title">Your Balance</p>
           <p className="money-card-amount" data-testid="balanceAmount">
-            {balanceValue}
+            Rs {balanceValue}
           </p>
         </div>
       </div>
@@ -30,7 +30,7 @@ const MoneyDetails = props => {
         <div className="money-card-details">
           <p className="money-card-title">Your Income</p>
           <p className="money-card-amount" data-testid="incomeAmount">
-            {incomeValue}
+            Rs {incomeValue}
           </p>
         </div>
       </div>
@@ -43,7 +43,7 @@ const MoneyDetails = props => {
         <div className="money-card-details">
           <p className="money-card-title">Your Expenses</p>
           <p className="money-card-amount" data-testid="expensesAmount">
-            {expensesValue}
+            Rs {expensesValue}
           </p>
         </div>
       </div>
